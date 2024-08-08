@@ -6,8 +6,14 @@ services:
       context: .
       dockerfile: Dockerfile 
     command: ["npm", "run", "start:server"]
-    ports: 
-      - 3000:3000
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.my-shop.rule=Host(`api.navhocreatives.store`)"  # Adjusted router name
+      - "traefik.http.routers.my-shop.entrypoints=https"
+      - "traefik.http.routers.my-shop.tls=true"
+      - "traefik.http.services.my-shop.loadbalancer.server.port=3000"  # Adjusted service name
+    networks:
+      - external
     volumes:
       - /usr/src/app
     environment:
@@ -40,3 +46,7 @@ services:
     environment:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: vendure
+
+networks:
+  external:
+    external: true

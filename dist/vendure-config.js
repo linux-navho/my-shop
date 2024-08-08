@@ -85,7 +85,7 @@ exports.config = {
             route: 'admin',
             port: 3000,
             adminUiConfig: {
-                apiHost: 'http://10.106.0.2',
+                apiHost: 'https://api.navhocreatives.store',
                 apiPort: 3000,
             },
         }),
