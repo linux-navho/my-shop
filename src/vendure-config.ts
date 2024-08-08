@@ -87,7 +87,7 @@ export const config: VendureConfig = {
             port: 3000,
             adminUiConfig: {
                 apiHost: 'https://api.navhocreatives.store',
-                apiPort: 3000,
+                apiPort: 443,
             },
         }),
     ],
