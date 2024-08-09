@@ -84,8 +84,6 @@ export const config: VendureConfig = {
                 },
             }) : undefined,
         }),
-
-
         DefaultJobQueuePlugin.init({ useDatabaseForBuffer: true }),
         DefaultSearchPlugin.init({ bufferUpdates: false, indexStockStatus: true }),
         EmailPlugin.init({
