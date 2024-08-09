@@ -45,6 +45,7 @@ export const config: VendureConfig = {
     dbConnectionOptions: {
         // ...
         type: 'postgres',
+        synchronize: process.env.DB_SYNCHRONIZE === 'true' ? true : undefined,
         database: process.env.DB_NAME,
         host: process.env.DB_HOST,
         port: process.env.DB_PORT ? +process.env.DB_PORT : undefined,
